@@ -6,6 +6,8 @@ This is the installer for LFS/LFC
 LFS is an online shop based on Python, Django and jQuery.
 LFC is a CMS based on Python, Django and jQuery.
 
+Currently we support for LFS 0.5.0b6 and LFC 1.0.2
+
 
 Requirements
 ============
@@ -28,6 +30,21 @@ Installation
 8.  $ bin/django lfs_init
 9.  $ bin/django runserver
 10. Browse to http://localhost:8000/
+
+
+Troubleshoots
+=============
+
+If you have version conflicts while doing the 4th installation step you need
+to open eggs/<package-that-required-conflict-library>.egg/EGG-INFO/requires.txt
+and patch it manually. For example there could be a problem with django-portlets.
+LFS needs verion 1.0b6 and LFC needs 1.0. So you can patch
+eggs/django_lfs-0.5.0b6-py2.6.egg/EGG-INFO/requires.txt and change
+line:
+django-portlets == 1.0b6
+to:
+django-portlets == 1.0
+
 
 
 More Information

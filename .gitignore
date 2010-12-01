@@ -20,3 +20,4 @@ db.sqlite
 *parts/
 *bin/
 *downloads/
+*project/media/
