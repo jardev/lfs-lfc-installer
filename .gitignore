@@ -1,0 +1,12 @@
+*.pyc
+*.tmp
+*.sqlite
+*.log
+*.swp
+.DS_Store
+.ropeproject
+.#*
+.project
+.pydevproject
+*.db
+*.sqlite
