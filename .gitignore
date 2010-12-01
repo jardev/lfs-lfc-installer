@@ -10,3 +10,5 @@
 .pydevproject
 *.db
 *.sqlite
+settings_local.py
+db.sqlite
