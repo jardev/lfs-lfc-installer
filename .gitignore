@@ -1,4 +1,5 @@
 *.pyc
+*.pyo
 *.tmp
 *.sqlite
 *.log
@@ -12,3 +13,10 @@
 *.sqlite
 settings_local.py
 db.sqlite
+.installed.cfg
+*develop-eggs/
+*.egg-info/
+*eggs/
+*parts/
+*bin/
+*downloads/
