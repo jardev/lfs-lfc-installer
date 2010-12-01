@@ -1,0 +1,52 @@
+What is it?
+===========
+
+This is the installer for LFS/LFC
+
+LFS is an online shop based on Python, Django and jQuery.
+LFC is an online shop based on Python, Django and jQuery.
+
+
+Requirements
+============
+
+* Python 2.6.X
+* A RDBMS of your choice (PostgreSQL, MySQL, SQLite or Oracle)
+
+
+Installation
+============
+
+1.  $ git clone git://github.com/jardev/lfs-lfc-installer.git
+2.  $ cd lfs-lfc-installer/
+3.  $ python bootstrap.py
+4.  $ bin/buildout -v
+5.  Create your own project/settings_local.py if you want to change some settings.
+    By default the database is in sqlite3 and stored in db.sqlite
+6.  $ bin/django syncdb
+7.  $ bin/django lfc_init
+8.  $ bin/django lfs_init
+9.  $ bin/django runserver
+10. Browse to http://localhost:8000/
+
+
+More Information
+================
+
+LFS:
+* `Official page <http://www.getlfs.com/>`_
+* `Documentation on PyPI <http://packages.python.org/django-lfs/index.html>`_
+* `Releases on PyPI <http://pypi.python.org/pypi/django-lfs>`_
+* `Source code on bitbucket.org <http://bitbucket.org/diefenbach/django-lfs>`_
+* `Google Group <http://groups.google.com/group/django-lfs>`_
+* `lfsproject on Twitter <http://twitter.com/lfsproject>`_
+* `IRC <irc://irc.freenode.net/django-lfs>`_
+
+LFC:
+* `Official page <http://www.lfcproject.com/>`_
+* `Documentation on PyPI <http://packages.python.org/django-lfc/index.html>`_
+* `Releases on PyPI <http://pypi.python.org/pypi/django-lfc>`_
+* `Source code on bitbucket.org <http://bitbucket.org/diefenbach/django-lfc>`_
+* `Google Group <http://groups.google.com/group/django-lfc>`_
+* `lfcproject on Twitter <http://twitter.com/lfcproject>`_
+* `IRC <irc://irc.freenode.net/django-lfc>`_
