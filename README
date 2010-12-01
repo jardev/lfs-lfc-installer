@@ -25,11 +25,12 @@ Installation
 4.  $ bin/buildout -v
 5.  Create your own project/settings_local.py if you want to change some settings.
     By default the database is in sqlite3 and stored in db.sqlite
-6.  $ bin/django syncdb
+6.  $ bin/django syncdb (see Troubleshoots)
 7.  $ bin/django lfc_init
 8.  $ bin/django lfs_init
-9.  $ bin/django runserver
-10. Browse to http://localhost:8000/
+9.  Remove uneccessary portlets Slot-s (they wil be duplicated for Left and Right, kill the the second pair)
+10.  $ bin/django runserver
+11. Browse to http://localhost:8000/
 
 
 Troubleshoots
@@ -45,6 +46,18 @@ django-portlets == 1.0b6
 to:
 django-portlets == 1.0
 
+If you have troubles when doing syncdb similar to:
+Error: One or more models did not validate:
+lfc.file: Accessor for field 'content_type' clashes with related field 'ContentType.files'. Add a related_name argument to the definition for 'content_type'.
+lfc.file: Reverse query name for field 'content_type' clashes with related field 'ContentType.files'. Add a related_name argument to the definition for 'content_type'.
+catalog.file: Accessor for field 'content_type' clashes with related field 'ContentType.files'. Add a related_name argument to the definition for 'content_type'.
+catalog.file: Reverse query name for field 'content_type' clashes with related field 'ContentType.files'. Add a related_name argument to the definition for 'content_type'.
+Then open eggs/django_lfs-0.5.0b6-py2.6.egg/lfs/catalog/models.py
+and apply next patch:
+1750:
+- content_type = models.ForeignKey(ContentType, verbose_name=_(u"Content type"), related_name="files", blank=True, null=True)
++ content_type = models.ForeignKey(ContentType, verbose_name=_(u"Content type"), related_name="lfs_files", blank=True, null=True)
+(change related_name from "files" to "lfs_files")
 
 
 More Information

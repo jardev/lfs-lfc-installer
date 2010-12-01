@@ -28,16 +28,16 @@ urlpatterns += patterns("",
     (r'', include('lfc_blog.urls')),
 )
 
+# LFS
+urlpatterns += patterns("",
+    (r'^shop/', include('lfs.core.urls')),
+    (r'^shop/manage/', include('lfs.manage.urls')),
+)
+
 # LFC
 urlpatterns += patterns('',
     (r'^manage/', include('lfc.manage.urls')),
     (r'', include('lfc.urls')),
-)
-
-# LFS
-urlpatterns = patterns("",
-    (r'^shop/', include('lfs.core.urls')),
-    (r'^shop/manage/', include('lfs.manage.urls')),
 )
 
 urlpatterns += patterns("",
